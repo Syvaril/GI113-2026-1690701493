@@ -14,14 +14,38 @@ namespace Assignment1
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             {
 
 
 
-                var GameName = "Pokemon Sword And Shield: The Crown Tundra";
+                var GameName = @"                                                     █▓▓▓                                           
+                                                   ▓▓▓▓▓▓▓                                          
+                                                  ▓▓▓▒░▒▒▓▓▓                                        
+                                   ▓▓▓▓▓▓▓▓     ▓▓▓▓▒▒▓▓▓▓▓        ▓▓▓▓▓▓▓▓                         
+      ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       █▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ███▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▓     █▓▓▓▓▓              
+  ▓▓▓▓▓▓▒▒▒▒▒░░▒▒▒▒▒▓▓▓▓    ██▓▓▒▒░░▒▓▓▓▒▒▒▒▓▓▓▓▓▓▓▓▒▒▒▓▓▓▓▓█▓▒▒▒▒▒▓▓▒░▒▒▓▓     █▓▓▓▓▓▓▓▓▓▓▓▓▓      
+█▓▓▓▒▒░░░░░░░░░░░░░░▒▒▓▓▓   ▓▓▓▓▓▒░░▒▒▓▒░░░░▒▓▓▓▒░░▒▒▒░░▒▒▓▓▓▓▒░░░▒▒▒▒░░▒▓▓     ▓▓▓▓▒░▒▒▒▓▓▓▓▓▓▓▓▓▓▓
+██▓▓▓▒░░░░░░░░▒▒▒▒▒░░▒▒▓▓   ▓▓▓█▓▒▒░▒▒▒░░░░▒▓▓▓▒░▒▓▓▓▓▒░▒▓▓▓▓▓▒░░░▒▒▒░░░▒▓▓▓▓▓▓▓▓▓▓▓▒░░░▒▒▓▓▓▒░▒▒▓▓▓
+ ██▓▓▓▒▒▒░░░░░▒▓▓▓▓▓░▒▒▓▓▓▓▓▓▓▓▓▓▓▒░░░░░░▒▓▓▓▓▒░▒▓▓▓▓▒▒▓▓▓▓▓▓▓▒░░░░░░░░░▒▒▓▓▓▒▒▒▒▒▒▓▓▒░░░▒▓▓▒░░░▒▓▓ 
+  ▓▓▓▓▓▓▓▒░░░░▒▒▓▓▓▓░▒▓▓▓▒▒▒▓▒░▒▒▓▓░░░░░▒▓▓▓▓▓▓░░▒▓▒░▒▓▒░▒▒▓▓▓▒░░░░░░░░░▒▓▒░▒▓▒░░▒▒▒▓▓▒░░▒▒▓▒░░▒▓▓▓ 
+   ▓▓▓▓▓▓▓▒░░░░▒▓▓▒░▒▓▓▒▒▒▓▓▒░▒▒▒▒▓▓░░░░░▒▒▒▒▓▓▒▒░░░░░░░░░▒▓▓▓▒░▒▓▒░░▒▒▒▓▒▒▒▒▓▓▓▓▓▒▒▒▓▒▒░░▒▒░░░▒▓▓  
+      ██▓▓▓▒░░░░▒▒▒▓▓▓▒▒░▒▓▓▓▓▓▓▒▒▓▓░▒▓▓▒▒░░░▒▒▓▓▓▒▒▒▒▒▓▓▓▓▓▓░░░▒▓▓▒▒▓▒▒▓▒░░▒▒▒▒▒▒░▒▓▓▒▒▒░▒░░░▒▓▓▓  
+       ███▓▓▒░░░▒▓▓▓▓▓▒░░░▒▒▒▒░░░▒▓▒░▒▓▓▓▓▓▓▒░░▒▒▒▓▓▓▓▓▓██▓▓▒▒░░▒▓▓▓▓▓▓▒▓▓▒░░░░░░░▒▓▓▒▒▒▒░░░░▒▓▓▓   
+        ███▓▓▒░░▒▒▓▓▓▓▓▒░░░░░░░▒▒▓▓░░▒▓▓███▓▓▓▓▒▒░░▒▓▓  ██▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▓▓▒▒▒▒▒▒▓▓▒▒░▒▓▒░░░▒▒▓▓    
+         ███▓▒▒░░▒▓▓▓█▓▓▓▒░░░▒▓▓▓▓▓░░▒▓▓   ████▓▓▓▓▓▓▓     ██████████▓▓▓▒▒▒▓▓▓▓▓█▓▓▒░░▒▓▒░░░▒▓▓     
+          ██▓▓▒░░▒▒▓▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓       ████▓▓▓             ████▓▓▓▓▓▓▓ ██▓▓▓▓▓▓▓▒░░▒▓▓▓     
+           ██▓▓▒░░▒▓▓▓  ████   ▓████               ██                   ██████  ███████▓▒▒░▒▓▓      
+           ███▓▓▓▓▓▓▓▓                                                               ███▓▓▓▓▓▓      
+            ██████                                                                      █████        ";
+
+
                 var monName = "Calyrex";
+                var monRegion = "Galar";
+
                 string monVariant = "Ice Rider";
                 string monPrimaryType = "Psychic";
                 string monSecondaryType = "Ice";
@@ -31,38 +55,61 @@ namespace Assignment1
                 string monAbility = "As One";
                 float monHeight = 2.4f;
                 float monWeight = 809.1f;
+                double monCatchRate = 95.7;
                 bool isEscapeable = false;
                 char monRarity = 'S';
+                int monDexNumber = 898;
+                int monBaseStatTotal = 680;
 
-                // Moveset
+                // implicit Conversion
+                double baseStatTotalDouble = monBaseStatTotal;
 
-                string Slot1Move = "Glacial Lance";
-                string Slot2Move = "Sword Dance";
-                string Slot3Move = "Zen Headbutt";
-                string Slot4Move = "Close Combat";
+                // explicit Cast vs Convert.ToInt32()
+                int castResult = (int)monCatchRate;
+                int convertResult = Convert.ToInt32(monCatchRate);
 
-                Console.WriteLine($"==== {GameName} ====");
-                Console.WriteLine($"Pokemon Name: {monName}");
-                Console.WriteLine($"Variant: {monVariant}");
-                Console.WriteLine($"Type: {monPrimaryType} / {monSecondaryType}");
-                Console.WriteLine($"Level: {monLevel}");
-                Console.WriteLine($"Nature: {monNature}");
-                Console.WriteLine($"Held Item: {monHeldItem}");
-                Console.WriteLine($"Ability: {monAbility}");
-                Console.WriteLine($"Height: {monHeight} m");
-                Console.WriteLine($"Weight: {monWeight} kg");
-                Console.WriteLine($"Escapeable: {isEscapeable}");
-                Console.WriteLine($"Rarity: {monRarity}");
-                Console.WriteLine("Moveset:");
-                Console.WriteLine($"1. {Slot1Move}");
-                Console.WriteLine($"2. {Slot2Move}");
-                Console.WriteLine($"3. {Slot3Move}");
-                Console.WriteLine($"4. {Slot4Move}");
+                // moveset
 
+                string slot1Move = "Glacial Lance";
+                string slot2Move = "Sword Dance";
+                string slot3Move = "Zen Headbutt";
+                string slot4Move = "Close Combat";
 
-
-
-
+                Console.WriteLine($"{GameName}");
+                Console.WriteLine();
+                Console.WriteLine($"╔══════════════════════════════════════════════════╗");
+                Console.WriteLine($"║ {"------------------- POKEDEX -------------------",-48} ║");
+                Console.WriteLine($"║                                                  ║");
+                Console.WriteLine($"║ {"Pokedex Number:",-17} #{monDexNumber,-29} ║");
+                Console.WriteLine($"║ {"Pokemon Name:",-17} {monName,-30} ║");
+                Console.WriteLine($"║ {"Variant:",-17} {monVariant,-30} ║");
+                Console.WriteLine($"║ {"Region:",-17} {monRegion,-30} ║");
+                Console.WriteLine($"║ {"Type:",-17} {monPrimaryType} / {monSecondaryType,-20} ║");
+                Console.WriteLine($"║ {"Level:",-17} {monLevel,-30} ║");
+                Console.WriteLine($"║ {"Nature:",-17} {monNature,-30} ║");
+                Console.WriteLine($"║ {"Held Item:",-17} {monHeldItem,-30} ║");
+                Console.WriteLine($"║ {"Ability:",-17} {monAbility,-30} ║");
+                Console.WriteLine($"║ {"Height:",-17} {monHeight} M{"",-25} ║");
+                Console.WriteLine($"║ {"Weight:",-17} {monWeight} KG{"",-22} ║");
+                Console.WriteLine($"║ {"Escapeable:",-17} {isEscapeable,-30} ║");
+                Console.WriteLine($"║ {"Rarity:",-17} {monRarity,-30} ║");
+                Console.WriteLine($"║                                                  ║");
+                Console.WriteLine($"╠══════════════════════════════════════════════════╣");
+                Console.WriteLine($"║ {"-------------------- MOVES ---------------------",-48} ║");
+                Console.WriteLine($"║                                                  ║");
+                Console.WriteLine($"║ {"1.",-4} {slot1Move,-43} ║");
+                Console.WriteLine($"║ {"2.",-4} {slot2Move,-43} ║");
+                Console.WriteLine($"║ {"3.",-4} {slot3Move,-43} ║");
+                Console.WriteLine($"║ {"4.",-4} {slot4Move,-43} ║");
+                Console.WriteLine($"║                                                  ║");
+                Console.WriteLine($"╠══════════════════════════════════════════════════╣");
+                Console.WriteLine($"║ {"----------------- CONVERSION -------------------",-48} ║");
+                Console.WriteLine($"║                                                  ║");
+                Console.WriteLine($"║ {"BaseStat as Double:",-20} {baseStatTotalDouble,-27} ║");
+                Console.WriteLine($"║ {"Cast (int):",-20} {castResult,-27} ║");
+                Console.WriteLine($"║ {"Convert.ToInt32():",-20} {convertResult,-27} ║");
+                Console.WriteLine($"║                                                  ║");
+                Console.WriteLine($"╚══════════════════════════════════════════════════╝");
 
             }
         }
