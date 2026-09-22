@@ -14,80 +14,61 @@ namespace Lab06
     {
         static void Main(string[] args)
         {
-            /*
-            bool isPoisoned = false;
-            if (isPoisoned) { }
-            if (!isPoisoned) { }
-
-            bool hasKey = true;
-            Console.WriteLine("Your Level (1-99):   ");
-            bool LvlInput = int.TryParse(Console.ReadLine(), out int level);
-
-            if (!LvlInput || level < 1 || level > 99)
-            {
-                Console.WriteLine("Invalid level.");
-
-            }
-            else if (level >= 10 || hasKey)
-            {
-                Console.WriteLine("Boss floor unlocked.");
-            }
-            else if (level >= 5)
-            {
-                if (hasKey == true)
-                {
-                    Console.WriteLine("The door opens.");
-                }
-
-                else
-                {
-                    Console.WriteLine("The door stays shut.");
-
-                }
-            }
-            else
-            {
-            }
-            */
-
             var GameName = "Pokemon Sword And Shield";
             string Hero = "Zacian";
-            string Monster = "Eternatus";
+            string Monster = "Clefairy";
             string HeroAbility = "Intrepid Sword";
+            string HeroMoves = "Behemoth Blade";
             float DamageMultiplier = 1.5f;
-            int heroHp = 230;
-            int heroAtk = 10;
-            int monHp = 570;
+            int heroHp = 180;
+            int heroAtk = 100;
+            int monHp = 1;
             int potionHeal = 50;
 
-            Console.WriteLine($"GAME TITLE: {GameName}");
-            Console.WriteLine($"A WILD {Monster} HAS APPEARED...");
-            Console.WriteLine($"{Hero} ABILITY BOOSTED IT'S ATTACK BY 1 STAGE");
+            Console.WriteLine($"[[--{GameName}--]]");
+            Console.WriteLine();
+            Console.WriteLine($"A Wild {Monster} Has Appeared!");
+            Console.WriteLine();
+            Console.WriteLine($"{Hero}'s Ability {HeroAbility} >>>");
+            Console.WriteLine();
+            Console.WriteLine($"{Hero}'s Attack Roses!");
+            Console.WriteLine();
+            Console.WriteLine("================================");
             Console.WriteLine("ACTION 1: ATTACK");
             Console.WriteLine("ACTION 2: DRINK HP POTION");
-
-            Console.WriteLine("CHOOSE YOUR ACTION (1 - 2): ");
+            Console.WriteLine("ACTION 3: RUN");
+            Console.WriteLine("================================");
+            Console.WriteLine();
+            Console.WriteLine("CHOOSE YOUR ACTION (1 - 3): ");
+            Console.WriteLine();
             bool isInputValid = int.TryParse(Console.ReadLine(), out int choice);
 
-            if (isInputValid == false || choice < 1 || choice > 2)
+            if (isInputValid == false || choice < 1 || choice > 3)
             {
-                Console.WriteLine("Invalid Input, Enter between 1 - 2.");
+                Console.WriteLine();
+                Console.WriteLine("Invalid Input, Enter between 1 - 3.");
             }
             else if (choice == 1)
             {
-                monHp -= heroAtk;
-                if (monHp < 0)
-                {
-                    int damage = (int)Math.Round(heroAtk * DamageMultiplier);
-                    Console.WriteLine($"{Hero} attacked the monster! with {damage} damage. The monster's HP is now {monHp} HP left.");
-                }
-                else if (choice == 2)
-                {
-                    monHp += potionHeal;
-                    Console.WriteLine($"{Hero} drank a potion! {Hero} healed {potionHeal} HP. The m");
-                }
+                int damage = (int)Math.Round(heroAtk * DamageMultiplier);
+                monHp -= damage;
+
+                Console.WriteLine();
+                Console.WriteLine($"{Hero} Used {HeroMoves} Deals {damage} damage. {Monster}'s HP is now {monHp} HP left.");
+                Console.WriteLine($"It's super effective! {Monster} is defeated!");
+            }
+            else if (choice == 2)
+            {
+                heroHp += potionHeal;
+
+                Console.WriteLine();
+                Console.WriteLine($"{Hero} drank a potion! {Hero} healed {potionHeal} HP. {Hero}'s HP is now {heroHp}.");
+            }
+            else if (choice == 3)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"You got away safely!");
             }
         }
     }
 }
-    
